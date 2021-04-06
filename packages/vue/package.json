@@ -1,0 +1,30 @@
+{
+  "name": "xross-vue",
+  "version": "0.0.0",
+  "description": "Component-based UI library for vue",
+  "main": "dist/xross-vue.umd.js",
+  "module": "dist/xross-vue.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/xross-vue.es.js",
+      "require": "./dist/xross-vue.umd.js"
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "commit": "yarn --cwd ../.. commit",
+    "cz": "yarn commit",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "^3.0.11",
+    "vite": "^2.1.5",
+    "vue-tsc": "^0.0.15"
+  }
+}
