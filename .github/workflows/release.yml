@@ -158,6 +158,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: dist
+          path: packages/vue/dist
 
       - name: debug
         run: ls -a packages/vue
