@@ -34,5 +34,8 @@
     "vite-plugin-windicss": "^0.12.5",
     "vue-dts-gen": "^0.2.3",
     "vue-tsc": "^0.0.15"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

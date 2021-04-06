@@ -159,6 +159,9 @@ jobs:
         with:
           name: dist
 
+      - name: debug
+        run: ls -a packages/vue
+
       - name: Release
         run: yarn release
         env:
