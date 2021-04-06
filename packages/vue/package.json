@@ -15,16 +15,24 @@
     "commit": "yarn --cwd ../.. commit",
     "cz": "yarn commit",
     "dev": "vite",
-    "build": "vite build",
+    "lint": "run-p lint:*",
+    "lint:tsc": "vue-tsc --noEmit",
+    "lint:style": "stylelint src/*",
+    "build": "run-p build:*",
+    "build:lib": "vite build",
+    "build:types": "tsc && tscpaths -p tsconfig.json -s src && vue-dts-gen src/components/**/*.vue --outDir dist",
     "serve": "vite preview"
   },
-  "peerDependencies": {
+  "dependencies": {
     "vue": "^3.0.11"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.11",
+    "less": "^4.1.1",
     "vite": "^2.1.5",
+    "vite-plugin-windicss": "^0.12.5",
+    "vue-dts-gen": "^0.2.3",
     "vue-tsc": "^0.0.15"
   }
 }
