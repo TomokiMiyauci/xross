@@ -1,13 +1,13 @@
 <template>
   <svg
-    class="loading"
+    :class="loading"
     :style="{
       maxWidth: diameterPx,
       maxHeight: diameterPx
     }"
   >
     <circle
-      class="loading-circle"
+      :class="loadingCircle"
       :stroke="color"
       :stroke-width="stroke"
       stroke-linecap="round"
@@ -15,24 +15,29 @@
       :r="normalizedRadius"
       :cx="radius"
       :cy="radius"
-      pathLength="100"
+      :pathLength="PATH_LENGTH"
     />
   </svg>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
 import {
-  DEFAULT_STROKE,
+  classNames,
+  DEFAULT_COLOR,
   DEFAULT_RADIUS,
-  DEFAULT_COLOR
-} from '@/components/loading/constants'
+  DEFAULT_STROKE,
+  PATH_LENGTH
+} from '@share/components/loading/constants'
+import { computed, defineComponent } from 'vue'
 
 const unit = (unit: string, val: string): string => `${val}${unit}`
 
 export default defineComponent({
   props: {
-    stroke: { default: DEFAULT_STROKE, type: Number },
+    stroke: {
+      default: DEFAULT_STROKE,
+      type: Number
+    },
     radius: { default: DEFAULT_RADIUS, type: Number },
     color: { default: DEFAULT_COLOR, type: String }
   },
@@ -42,48 +47,11 @@ export default defineComponent({
     const diameterPx = computed<string>(() =>
       unit('px', diameter.value.toString())
     )
-    return { normalizedRadius, diameterPx }
+    return { normalizedRadius, diameterPx, PATH_LENGTH, ...classNames }
   }
 })
 </script>
 
 <style scoped lang="less">
-.loading {
-  animation: rotator 2s linear infinite;
-
-  &-circle {
-    stroke-dasharray: 100;
-    transform-origin: center;
-    animation: dash 1.4s ease-in-out infinite;
-  }
-}
-
-@keyframes rotator {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-
-@keyframes dash {
-  0%,
-  25% {
-    stroke-dashoffset: 96;
-    transform: rotate(0);
-  }
-
-  50%,
-  75% {
-    stroke-dashoffset: 26;
-    transform: rotate(45deg);
-  }
-
-  100% {
-    stroke-dashoffset: 96;
-    transform: rotate(360deg);
-  }
-}
+@import '@share/components/loading/index.less';
 </style>

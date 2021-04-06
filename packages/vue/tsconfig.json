@@ -7,11 +7,14 @@
     "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@share/*": ["../shared/src/*"]
     },
     "outDir": "dist"
   },
   "files": ["src/index.ts"],
 
-  "include": ["src/**/*.ts"]
+  "references": [{ "path": "../shared" }],
+
+  "include": ["src/**/*.ts", "src/**/*.vue", "../shared/src/*.ts"]
 }

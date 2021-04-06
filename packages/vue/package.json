@@ -4,6 +4,7 @@
   "description": "Component-based UI library for vue",
   "main": "dist/xross-vue.umd.js",
   "module": "dist/xross-vue.es.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/xross-vue.es.js",
@@ -17,10 +18,11 @@
     "dev": "vite",
     "lint": "run-p lint:*",
     "lint:tsc": "vue-tsc --noEmit",
+    "lint:script": "eslint src/**/*.{vue,ts}",
     "lint:style": "stylelint src/*",
     "build": "run-p build:*",
     "build:lib": "vite build",
-    "build:types": "tsc && tscpaths -p tsconfig.json -s src && vue-dts-gen src/components/**/*.vue --outDir dist",
+    "build:types": "tsc && tscpaths -p tsconfig.json -s src && yarn esno scripts/replace-vue-ext.ts && yarn esno scripts/gen-vue-types",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -29,6 +31,10 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.11",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.8.0",
     "less": "^4.1.1",
     "vite": "^2.1.5",
     "vite-plugin-windicss": "^0.12.5",
