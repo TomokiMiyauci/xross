@@ -15,7 +15,6 @@
 
     "sourceMap": true,
     "declaration": true,
-    "outDir": "dist",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
