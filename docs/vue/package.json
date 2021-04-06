@@ -6,18 +6,27 @@
   "scripts": {
     "commit": "yarn --cwd ../.. commit",
     "cz": "yarn commit",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev": "vite-ssrg dev",
+    "build": "vite-ssrg build",
+    "serve": "vite-ssrg preview",
+    "generate": "vite-ssrg generate"
   },
   "dependencies": {
+    "@vueuse/head": "^0.5.1",
+    "prismjs": "^1.23.0",
     "vue": "^3.0.5",
+    "vue-router": "^4.0.5",
     "xross-vue": "./packages/vue"
   },
   "devDependencies": {
+    "@types/prismjs": "^1.16.4",
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.5",
+    "@vue/server-renderer": "^3.0.7",
     "vite": "^2.1.5",
+    "vite-plugin-ssr-ssg": "^1.4.1",
+    "vite-plugin-vue-layouts": "^0.2.2",
+    "vite-plugin-windicss": "^0.12.5",
     "vue-tsc": "^0.0.15"
   }
 }
