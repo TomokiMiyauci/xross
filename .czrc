@@ -3,7 +3,7 @@
   "config": {
     "cz-emoji": {
       "scopes": [
-        "core",
+        "shared",
         "vue",
         "react",
         "examples"
