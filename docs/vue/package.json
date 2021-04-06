@@ -1,0 +1,23 @@
+{
+  "name": "docs-vue",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "commit": "yarn --cwd ../.. commit",
+    "cz": "yarn commit",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.0.5",
+    "xross-vue": "./packages/vue"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.1.5",
+    "vue-tsc": "^0.0.15"
+  }
+}
