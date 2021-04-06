@@ -160,9 +160,6 @@ jobs:
           name: dist
           path: packages/vue/dist
 
-      - name: debug
-        run: ls -a packages/vue
-
       - name: Release
         run: yarn release
         env:
