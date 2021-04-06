@@ -1,0 +1,11 @@
+{
+  "name": "xross-shared",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "commit": "yarn --cwd ../.. commit",
+    "cz": "yarn commit",
+    "build": "tsc"
+  }
+}
