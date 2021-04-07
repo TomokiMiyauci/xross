@@ -12,5 +12,7 @@
     "jsx": "react",
     "outDir": "dist"
   },
+  "references": [{ "path": "../shared" }],
+
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
