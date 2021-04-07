@@ -76,7 +76,7 @@ jobs:
           path: packages/vue/dist
           if-no-files-found: error
 
-     - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
           name: dist-react
           path: packages/react/dist
@@ -116,7 +116,7 @@ jobs:
           name: dist-vue
           path: packages/vue/dist
 
-     - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v2
         with:
           name: dist-react
           path: packages/react/dist
@@ -158,7 +158,7 @@ jobs:
           name: dist-vue
           path: packages/vue/dist
 
-     - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v2
         with:
           name: dist-react
           path: packages/react/dist
@@ -199,7 +199,7 @@ jobs:
           name: dist-vue
           path: packages/vue/dist
 
-     - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v2
         with:
           name: dist-react
           path: packages/react/dist
