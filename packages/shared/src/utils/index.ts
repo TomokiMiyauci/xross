@@ -1,4 +1,4 @@
-export * from '@/utils/math'
+export * from './math'
 const unit = (unit: string, val: string): string => `${val}${unit}`
 const px = (val: string): string => unit('px', val)
 

@@ -3,6 +3,11 @@
     "composite": true,
     "outDir": "dist",
     "declaration": true,
-    "declarationMap": true
-  }
+    "declarationMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*.ts"]
 }

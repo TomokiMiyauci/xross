@@ -6,6 +6,6 @@
   "scripts": {
     "commit": "yarn --cwd ../.. commit",
     "cz": "yarn commit",
-    "build": "tsc"
+    "build": "tsc && tscpaths -p tsconfig.json --src ."
   }
 }
