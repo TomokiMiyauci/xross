@@ -28,9 +28,8 @@ import {
   DEFAULT_STROKE,
   PATH_LENGTH
 } from '@share/components/loading/constants'
+import { divide, multiply, px, subtract } from '@share/utils'
 import { computed, defineComponent } from 'vue'
-
-const unit = (unit: string, val: string): string => `${val}${unit}`
 
 export default defineComponent({
   props: {
@@ -42,11 +41,11 @@ export default defineComponent({
     color: { default: DEFAULT_COLOR, type: String }
   },
   setup(props) {
-    const normalizedRadius = computed(() => props.radius - props.stroke / 2)
-    const diameter = computed<number>(() => props.radius * 2)
-    const diameterPx = computed<string>(() =>
-      unit('px', diameter.value.toString())
+    const normalizedRadius = computed(() =>
+      subtract(props.radius, divide(props.stroke, 2))
     )
+    const diameter = computed<number>(() => multiply(props.radius, 2))
+    const diameterPx = computed<string>(() => px(diameter.value.toString()))
     return { normalizedRadius, diameterPx, PATH_LENGTH, ...classNames }
   }
 })
