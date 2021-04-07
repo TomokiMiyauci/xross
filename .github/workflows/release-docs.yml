@@ -6,7 +6,7 @@ on:
       - beta
     paths:
       - docs/**
-      - .github/workspaces/release-docs.yml
+      - .github/workflows/release-docs.yml
 
 jobs:
   build_and_deploy:
