@@ -4,6 +4,7 @@
   "description": "Component-based UI library for react",
   "main": "dist/xross-react.umd.js",
   "module": "dist/xross-react.es.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/xross-react.es.js",
