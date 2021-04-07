@@ -66,8 +66,20 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: dist
+          name: dist-shared
+          path: packages/shared/dist
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist-vue
           path: packages/vue/dist
+          if-no-files-found: error
+
+     - uses: actions/upload-artifact@v2
+        with:
+          name: dist-react
+          path: packages/react/dist
           if-no-files-found: error
 
   lint:
@@ -96,7 +108,18 @@ jobs:
 
       - uses: actions/download-artifact@v2
         with:
-          name: dist
+          name: dist-shared
+          path: packages/shared/dist
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist-vue
+          path: packages/vue/dist
+
+     - uses: actions/download-artifact@v2
+        with:
+          name: dist-react
+          path: packages/react/dist
 
       - name: Lint
         run: yarn lint
@@ -127,7 +150,18 @@ jobs:
 
       - uses: actions/download-artifact@v2
         with:
-          name: dist
+          name: dist-shared
+          path: packages/shared/dist
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist-vue
+          path: packages/vue/dist
+
+     - uses: actions/download-artifact@v2
+        with:
+          name: dist-react
+          path: packages/react/dist
 
       - name: Test
         run: yarn test
@@ -157,8 +191,18 @@ jobs:
 
       - uses: actions/download-artifact@v2
         with:
-          name: dist
+          name: dist-shared
+          path: packages/shared/dist
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist-vue
           path: packages/vue/dist
+
+     - uses: actions/download-artifact@v2
+        with:
+          name: dist-react
+          path: packages/react/dist
 
       - name: Release
         run: yarn release
