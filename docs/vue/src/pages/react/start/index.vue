@@ -6,8 +6,6 @@
       <h2>Install with NPM or Yarn</h2>
 
       <prism :code="install" />
-      <h2>Use all components</h2>
-      <prism :code="useAll" />
     </div>
   </div>
 </template>
@@ -16,15 +14,9 @@
 import Prism from '@/components/Prism'
 
 const install = `# NPM
-npm install xross-vue
+npm install xross-react
 
 # Yarn
-yarn add xross-vue
-`
-
-const useAll = `import { createApp } from 'vue'
-import Xross from 'xross-vue'
-
-createApp.use(Xross)
+yarn add xross-react
 `
 </script>
