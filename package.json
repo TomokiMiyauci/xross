@@ -17,7 +17,7 @@
     "prepare": "husky install",
     "release": "multi-semantic-release --ignore-packages=examples/*,docs/* --deps.bump=satisfy",
     "lint": "wsrun -p xross* -m lint",
-    "build": "wsrun -p xross* -t -r -m build",
+    "build": "wsrun -p xross-shared -r build && wsrun -p xross* -x xross-shared -t -r -m build",
     "test": "wsrun -p xross* -m test"
   },
   "devDependencies": {
