@@ -17,6 +17,8 @@ jobs:
         run: |
           yarn
           yarn build
+          rm -rf docs/vue/node_modules
+          yarn
           yarn generate
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
