@@ -20,7 +20,7 @@ export default defineConfig({
   plugins: [
     vue(),
     WindiCSS({
-      preflight: false
+      preflight: true
     })
   ],
   build: {
