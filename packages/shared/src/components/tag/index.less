@@ -1,0 +1,37 @@
+@import '@share/styles/variables.less';
+
+.tag {
+  @apply inline-flex shadow border font-light text-gray-600 rounded align-middle py-px text-sm px-2 bg-white hover:(shadow-md) transition duration-200;
+
+  &--primary {
+    @apply ~'border-@{color-primary}';
+
+    &--filled {
+      @apply ~'bg-@{color-primary}' text-white;
+    }
+  }
+
+  &--success {
+    @apply ~'border-@{color-success}';
+
+    &--filled {
+      @apply ~'bg-@{color-success}' text-white;
+    }
+  }
+
+  &--warning {
+    @apply ~'border-@{color-warning}';
+
+    &--filled {
+      @apply ~'bg-@{color-warning}' text-white;
+    }
+  }
+
+  &--danger {
+    @apply ~'border-@{color-danger}';
+
+    &--filled {
+      @apply ~'bg-@{color-danger}' text-white;
+    }
+  }
+}
