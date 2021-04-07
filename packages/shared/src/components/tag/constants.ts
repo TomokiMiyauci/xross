@@ -1,3 +1,3 @@
-import { Colors } from '../../constants'
+import { NEUTRAL } from '../../constants'
 
-export const DEFAULT_COLOR = Colors.NEUTRAL
+export const DEFAULT_COLOR = NEUTRAL

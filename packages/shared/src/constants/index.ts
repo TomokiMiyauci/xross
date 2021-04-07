@@ -1,1 +1,1 @@
-export { Colors } from './enums'
+export * from './color'
