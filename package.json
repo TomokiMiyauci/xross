@@ -16,9 +16,9 @@
     "commit": "cz",
     "prepare": "husky install",
     "release": "multi-semantic-release --ignore-packages=examples/*,docs/* --deps.bump=satisfy",
-    "lint": "wsrun -m lint",
-    "build": "wsrun -t -r -m build",
-    "test": "wsrun -m test"
+    "lint": "wsrun -p xross* -m lint",
+    "build": "wsrun -p xross* -t -r -m build",
+    "test": "wsrun -p xross* -m test"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
