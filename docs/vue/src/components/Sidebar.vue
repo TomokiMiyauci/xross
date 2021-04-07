@@ -30,14 +30,14 @@
           exact
           active-class="text-green-500"
           class="capitalize block text-lg text-gray-500"
-          to="/vue/introduction"
+          :to="frameworkPath('/introduction')"
           >introduction</router-link
         >
         <router-link
           exact
           active-class="text-green-500"
           class="capitalize block text-lg text-gray-500"
-          to="/vue/start"
+          :to="frameworkPath('/start')"
           >getting started</router-link
         >
       </li>
@@ -49,7 +49,7 @@
           exact
           active-class=" text-green-500"
           class="capitalize text-lg text-gray-500"
-          to="/vue/components/loading"
+          :to="frameworkPath('/components/loading')"
           >loading</router-link
         >
       </li>
@@ -61,10 +61,28 @@
           exact
           active-class=" text-green-500"
           class="capitalize text-lg text-gray-500"
-          to="/vue/components/tag"
+          :to="frameworkPath('/components/tag')"
           >tag</router-link
         >
       </li>
     </ul>
   </nav>
 </template>
+
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+const frameworkPath = (to: string): string => {
+  const framework = detectFramework(route.path)
+
+  return `/${framework}${to}`
+}
+
+const detectFramework = (path: string): 'vue' | 'react' | undefined => {
+  if (path.startsWith('/vue')) return 'vue'
+  if (path.startsWith('/react')) return 'react'
+  return
+}
+</script>
