@@ -1,7 +1,14 @@
 import { execSync } from 'child_process'
-import { mkdirpSync, moveSync, removeSync } from 'fs-extra'
+import { mkdirpSync, moveSync, readdirSync, removeSync } from 'fs-extra'
+import { join } from 'path'
+const components = readdirSync('src/components', {
+  encoding: 'utf-8'
+})
 
-mkdirpSync('dist/vue/src/components/loading')
+components.forEach((component) => {
+  mkdirpSync(join('dist', 'vue', 'src', 'components', component))
+})
+
 execSync('yarn vue-dts-gen src/components/**/*.vue --outDir dist')
 
 moveSync('dist/vue/src/components', 'dist/components', {
