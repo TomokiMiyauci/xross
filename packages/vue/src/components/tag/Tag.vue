@@ -7,22 +7,15 @@
 </template>
 
 <script lang="ts">
-const validator = (val: Colors): boolean =>
-  [
-    Colors.PRIMARY,
-    Colors.SUCCESS,
-    Colors.DANGER,
-    Colors.WARNING,
-    Colors.NEUTRAL
-  ].includes(val)
+const validator = (val: Color): boolean => COLORS.includes(val)
 
 import { DEFAULT_COLOR } from '@share/components/tag/constants'
-import { Colors } from '@share/constants'
-import { defineComponent } from 'vue'
+import { Color, COLORS } from '@share/constants'
+import { defineComponent, PropType } from 'vue'
 export default defineComponent({
   props: {
     type: {
-      type: String,
+      type: String as PropType<Color>,
       default: DEFAULT_COLOR,
       validator
     },
