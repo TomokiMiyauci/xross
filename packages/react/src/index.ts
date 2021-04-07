@@ -1,3 +1,6 @@
-import Loading from '@/components/loading/Loading'
+import 'virtual:windi.css'
 
-export { Loading }
+import Loading from '@/components/loading/Loading'
+import Tag from '@/components/tag/Tag'
+
+export { Loading, Tag }
