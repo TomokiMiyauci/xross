@@ -9,7 +9,7 @@
         v-if="loading"
         :radius="RADIUS"
         :stroke="STROKE"
-        :color="outlined ? type : color"
+        :color="outlined ? color : color === 'neutral' ? colorGray : colorWhite"
       />
     </span>
   </button>
@@ -18,7 +18,8 @@
 <script lang="ts">
 import {
   classes,
-  color,
+  colorGray,
+  colorWhite,
   props2Class,
   RADIUS,
   STROKE
@@ -36,8 +37,8 @@ export default defineComponent({
     Loading
   },
   props: {
-    type: {
-      type: String as PropType<Color>,
+    color: {
+      type: String as PropType<Color | string>,
       default: DEFAULT_COLOR,
       validator: colorValidator
     },
@@ -54,15 +55,11 @@ export default defineComponent({
         round: props.round,
         block: props.block,
         loading: props.loading,
-        color: props.type,
+        color: props.color,
         disabled: props.disabled
       })
     )
-    return { rootClass, ...classes, color, RADIUS, STROKE }
+    return { rootClass, ...classes, colorWhite, colorGray, RADIUS, STROKE }
   }
 })
 </script>
-
-<style scoped lang="less">
-@import '@share/components/button/index.less';
-</style>
