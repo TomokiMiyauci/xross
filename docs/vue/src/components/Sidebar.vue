@@ -42,6 +42,16 @@
         >
       </li>
       <li class="font-semibold text-xl uppercase my-4">Components</li>
+      <li class="font-semibold text-xl uppercase my-4">basic</li>
+      <li class="ml-6">
+        <router-link
+          exact
+          active-class=" text-green-500"
+          class="capitalize text-lg text-gray-500"
+          :to="frameworkPath('/components/button')"
+          >button</router-link
+        >
+      </li>
       <li class="font-semibold text-xl uppercase my-2">progress</li>
 
       <li class="ml-6">
