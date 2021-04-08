@@ -1,3 +1,5 @@
+@import '../../styles/variables.less';
+
 .loading {
   animation: rotate 2s linear infinite;
 
@@ -5,7 +7,23 @@
     stroke-dasharray: 100;
     animation: dash 1.4s ease-in-out infinite;
 
-    @apply origin-center;
+    @apply origin-center stroke-current;
+
+    &.primary {
+      @apply ~'text-@{color-primary}';
+    }
+
+    &.success {
+      @apply ~'text-@{color-success}';
+    }
+
+    &.warning {
+      @apply ~'text-@{color-warning}';
+    }
+
+    &.danger {
+      @apply ~'text-@{color-danger}';
+    }
   }
 }
 
