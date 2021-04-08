@@ -1,0 +1,59 @@
+@import '../../styles/variables.less';
+
+.button-type (@color) {
+  @apply ~'border-@{color}' ~'bg-@{color}' ~'ring-@{color}' ~'hover:bg-opacity-90' ring-opacity-40 text-white;
+
+  &.outlined {
+    @apply bg-transparent ~'text-@{color}' ~'hover:bg-@{color}' hover:(bg-opacity-10);
+  }
+}
+
+.btn {
+  @apply relative outline-none rounded hover:(shadow-md border-gray-400) focus:(outline-none ring-2) active:(ring-4 opacity-100) disabled:(cursor-not-allowed ring-0) border shadow py-1 px-3 text-sm transition duration-200;
+
+  &.round {
+    @apply rounded-full;
+  }
+
+  &.block {
+    @apply w-full;
+  }
+
+  &.loading {
+    @apply cursor-wait active:(ring-0);
+
+    .text {
+      @apply invisible;
+    }
+  }
+
+  &.neutral {
+    @apply ~'border-@{color-neutral}'  ~'ring-@{color-neutral}' ring-opacity-40 text-gray-600;
+  }
+
+  &.primary {
+    .button-type(@color-primary);
+  }
+
+  &.success {
+    .button-type(@color-success);
+  }
+
+  &.warning {
+    .button-type(@color-warning);
+  }
+
+  &.danger {
+    .button-type(@color-danger);
+  }
+
+  &.disabled {
+    @apply disabled:(text-gray-500 bg-gray-200 border-gray-200);
+  }
+}
+
+.loading-wrap {
+  @apply absolute top-1/2 left-1/2;
+
+  transform: translate(-50%, -50%);
+}
