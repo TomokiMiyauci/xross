@@ -2,28 +2,28 @@
 
 .loading {
   animation: rotate 2s linear infinite;
+}
 
-  &-circle {
-    stroke-dasharray: 100;
-    animation: dash 1.4s ease-in-out infinite;
+.circle {
+  stroke-dasharray: 100;
+  animation: dash 1.4s ease-in-out infinite;
 
-    @apply origin-center stroke-current;
+  @apply origin-center stroke-current;
 
-    &.primary {
-      @apply ~'text-@{color-primary}';
-    }
+  &.primary {
+    @apply ~'text-@{color-primary}';
+  }
 
-    &.success {
-      @apply ~'text-@{color-success}';
-    }
+  &.success {
+    @apply ~'text-@{color-success}';
+  }
 
-    &.warning {
-      @apply ~'text-@{color-warning}';
-    }
+  &.warning {
+    @apply ~'text-@{color-warning}';
+  }
 
-    &.danger {
-      @apply ~'text-@{color-danger}';
-    }
+  &.danger {
+    @apply ~'text-@{color-danger}';
   }
 }
 

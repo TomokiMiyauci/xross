@@ -7,7 +7,7 @@
     }"
   >
     <circle
-      :class="[loadingCircle, colorClass]"
+      :class="[circle, colorClass]"
       :stroke-width="stroke"
       stroke-linecap="round"
       fill="none"
@@ -25,11 +25,13 @@ import {
   DEFAULT_COLOR,
   DEFAULT_RADIUS,
   DEFAULT_STROKE,
+  getColorClass,
   PATH_LENGTH
-} from '@share/components/loading/constants'
-import { Color, COLORS } from '@share/constants'
+} from '@share/components/loading'
+import { Color } from '@share/constants'
 import { divide, multiply, px, subtract } from '@share/utils'
 import { computed, defineComponent, PropType } from 'vue'
+const { loading, circle } = classNames
 
 export default defineComponent({
   props: {
@@ -45,25 +47,23 @@ export default defineComponent({
       subtract(props.radius, divide(props.stroke, 2))
     )
 
-    const colorClass = computed(() =>
-      COLORS.includes(props.color as Color) ? props.color : 'color'
-    )
+    const colorClass = computed(() => getColorClass(props.color))
     const diameter = computed<number>(() => multiply(props.radius, 2))
     const diameterPx = computed<string>(() => px(diameter.value.toString()))
+
     return {
       normalizedRadius,
       diameterPx,
       PATH_LENGTH,
-      ...classNames,
-      colorClass
+      colorClass,
+      loading,
+      circle
     }
   }
 })
 </script>
 
 <style scoped lang="less">
-@import '@share/components/loading/index.less';
-
 .color {
   stroke: v-bind(color);
 }
