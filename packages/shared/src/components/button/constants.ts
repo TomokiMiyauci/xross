@@ -1,7 +1,10 @@
+import s from './index.module.less'
+
 export const classes = {
-  text: 'text',
-  loadingWrap: 'loading-wrap'
+  text: s.text,
+  loadingWrap: s.wrap
 }
-export const color = '#fff'
+export const colorWhite = '#fff'
+export const colorGray = '#4b5563'
 export const RADIUS = 10
 export const STROKE = 3

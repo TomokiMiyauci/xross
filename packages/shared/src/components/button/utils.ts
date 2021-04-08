@@ -1,4 +1,6 @@
 import { Color } from '../../constants'
+import s from './index.module.less'
+
 const props2Class = ({
   outlined,
   round,
@@ -15,14 +17,14 @@ const props2Class = ({
   disabled: boolean
 }) => {
   return [
-    'btn',
+    s.btn,
     {
-      outlined,
-      round,
-      block,
-      loading,
-      [color]: color,
-      disabled
+      [s.outlined]: outlined,
+      [s.round]: round,
+      [s.block]: block,
+      [s.loading]: loading,
+      [s[color]]: color,
+      [s.disabled]: disabled
     }
   ]
 }
