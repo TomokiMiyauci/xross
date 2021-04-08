@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { FC, ReactChild } from 'react'
-import { Color } from '@share/constants'
-import { DEFAULT_COLOR } from '@share/components/tag/constants'
+import { Color, DEFAULT_COLOR } from '@share/constants'
 import '@share/components/tag/index.less'
 
 type Props = {
