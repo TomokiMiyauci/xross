@@ -3,6 +3,7 @@
     v-click-outside="() => toggleShow(false)"
     class="inline-block relative"
     @click="() => toggleShow()"
+    @keypress="() => toggleShow()"
   >
     <slot :showing="isShow" />
 
