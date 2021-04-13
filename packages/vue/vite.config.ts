@@ -20,7 +20,11 @@ export default defineConfig({
   plugins: [
     vue(),
     WindiCSS({
-      preflight: true
+      preflight: true,
+      scan: {
+        dirs: ['src', resolve(__dirname, '..', 'shared', 'src')],
+        fileExtensions: ['vue', 'ts']
+      }
     })
   ],
   build: {
