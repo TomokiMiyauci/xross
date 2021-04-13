@@ -1,5 +1,6 @@
 import { computed, ComputedRef, ref, UnwrapRef } from 'vue'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyFn<T = any> = (...args: any[]) => T
 
 type UseState<T> = readonly [

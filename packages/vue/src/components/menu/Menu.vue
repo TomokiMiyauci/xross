@@ -1,8 +1,8 @@
 <template>
   <span
-    v-click-outside="() => setShow(false)"
+    v-click-outside="() => toggleShow(false)"
     class="inline-block relative"
-    @click="() => setShow(!isShow)"
+    @click="() => toggleShow()"
   >
     <slot :showing="isShow" />
 
@@ -15,16 +15,18 @@
 </template>
 
 <script lang="ts">
-import { mixin } from '@miyauci/vue-click-outside'
+import { directive } from '@miyauci/vue-click-outside'
 import { DEFAULT_POSITION } from '@share/components/menu/constants'
 import { Position } from '@share/constants'
 import { position } from '@share/utils'
 import { positionValidator as validator } from '@share/validator'
 import { computed, defineComponent, PropType } from 'vue'
 
-import { useState } from '@/hooks'
+import { useToggle } from '@/hooks'
 export default defineComponent({
-  mixins: [mixin],
+  directives: {
+    ClickOutside: directive
+  },
 
   props: {
     position: {
@@ -35,12 +37,12 @@ export default defineComponent({
   },
 
   setup(props) {
-    const [isShow, setShow] = useState(false)
+    const [isShow, toggleShow] = useToggle()
     const positionClass = computed<string>(() => position(props.position))
 
     return {
       isShow,
-      setShow,
+      toggleShow,
       positionClass
     }
   }
