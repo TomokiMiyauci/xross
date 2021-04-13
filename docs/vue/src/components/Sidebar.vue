@@ -39,7 +39,7 @@ import { detectFramework } from '@/utils'
 
 const route = useRoute()
 
-const components = ['button', 'loading', 'tag', 'menu']
+const components = ['Button', 'Loading', 'Tag', 'Menu']
 
 const frameworkPath = (to: string): string => {
   const framework = detectFramework(route.path)
