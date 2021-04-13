@@ -17,7 +17,7 @@
     "cz": "yarn commit",
     "dev": "vite",
     "lint": "run-p lint:*",
-    "lint:tsc": "tsc --noEmit",
+    "lint:tsc": "yarn build:types",
     "lint:script": "eslint src/**/*.{ts,tsx}",
     "lint:style": "stylelint src/*",
     "build": "run-p build:*",
