@@ -66,12 +66,6 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: dist-shared
-          path: packages/shared/dist
-          if-no-files-found: error
-
-      - uses: actions/upload-artifact@v2
-        with:
           name: dist-vue
           path: packages/vue/dist
           if-no-files-found: error
@@ -106,12 +100,6 @@ jobs:
           path: '**/node_modules'
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
-      - uses: actions/download-artifact@v2
-        with:
-          name: dist-shared
-          path: packages/shared/dist
-
-      - uses: actions/download-artifact@v2
         with:
           name: dist-vue
           path: packages/vue/dist
@@ -150,11 +138,6 @@ jobs:
 
       - uses: actions/download-artifact@v2
         with:
-          name: dist-shared
-          path: packages/shared/dist
-
-      - uses: actions/download-artifact@v2
-        with:
           name: dist-vue
           path: packages/vue/dist
 
@@ -188,11 +171,6 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-
-      - uses: actions/download-artifact@v2
-        with:
-          name: dist-shared
-          path: packages/shared/dist
 
       - uses: actions/download-artifact@v2
         with:

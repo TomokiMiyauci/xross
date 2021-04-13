@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "composite": true,
-    "outDir": "dist",
     "declaration": true,
     "declarationMap": true,
     "baseUrl": ".",

@@ -1,11 +1,9 @@
 {
   "name": "xross-shared",
-  "version": "1.0.0-beta.2",
   "private": true,
   "license": "MIT",
   "scripts": {
     "commit": "yarn --cwd ../.. commit",
-    "cz": "yarn commit",
-    "build": "tsc && tscpaths -p tsconfig.json --src ."
+    "cz": "yarn commit"
   }
 }
