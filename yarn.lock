@@ -715,6 +715,13 @@
     globby "^11.0.0"
     read-yaml-file "^1.1.0"
 
+"@miyauci/vue-click-outside@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@miyauci/vue-click-outside/-/vue-click-outside-1.1.0.tgz#85d08bdb26a7be0e00aabf91e20b2598ee98d878"
+  integrity sha512-J2OPhKLVbtFmkT3BGFV3XEZgzwDJP4NO3YTfbfp0ybhGjPUuB31k7JX0u04XB45G9X1y3tezNkbIsgefudiKgg==
+  dependencies:
+    vue "^3.0.5"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -10090,7 +10097,7 @@ vue-eslint-parser@^7.0.0, vue-eslint-parser@^7.6.0:
     esquery "^1.4.0"
     lodash "^4.17.15"
 
-vue-router@^4.0.3, vue-router@^4.0.5:
+vue-router@^4.0.3, vue-router@^4.0.5, vue-router@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.6.tgz#91750db507d26642f225b0ec6064568e5fe448d6"
   integrity sha512-Y04llmK2PyaESj+N33VxLjGCUDuv9t4q2OpItEGU7POZiuQZaugV6cJpE6Qm1sVFtxufodLKN2y2dQl9nk0Reg==
