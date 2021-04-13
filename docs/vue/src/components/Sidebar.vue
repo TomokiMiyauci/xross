@@ -19,37 +19,14 @@
         >
       </li>
       <li class="font-semibold text-xl uppercase my-4">Components</li>
-      <li class="font-semibold text-xl uppercase my-4">basic</li>
-      <li class="ml-6">
+
+      <li v-for="name in components" class="ml-3 space-y-4">
         <router-link
           exact
-          active-class=" text-green-500"
-          class="capitalize text-lg text-gray-500"
-          :to="frameworkPath('/components/button')"
-          >button</router-link
-        >
-      </li>
-      <li class="font-semibold text-xl uppercase my-2">progress</li>
-
-      <li class="ml-6">
-        <router-link
-          exact
-          active-class=" text-green-500"
-          class="capitalize text-lg text-gray-500"
-          :to="frameworkPath('/components/loading')"
-          >loading</router-link
-        >
-      </li>
-
-      <li class="font-semibold text-xl uppercase my-2">display</li>
-
-      <li class="ml-6">
-        <router-link
-          exact
-          active-class=" text-green-500"
-          class="capitalize text-lg text-gray-500"
-          :to="frameworkPath('/components/tag')"
-          >tag</router-link
+          class="hover:(bg-gray-200) py-1 mb-1 px-4 transition duration-200 rounded-md capitalize block text-lg text-gray-500"
+          active-class="text-green-500 bg-green-300 hover:(bg-green-600 text-gray-900)"
+          :to="frameworkPath(`/components/${name}`)"
+          >{{ name }}</router-link
         >
       </li>
     </ul>
@@ -61,6 +38,8 @@ import { useRoute } from 'vue-router'
 import { detectFramework } from '@/utils'
 
 const route = useRoute()
+
+const components = ['button', 'loading', 'tag', 'menu']
 
 const frameworkPath = (to: string): string => {
   const framework = detectFramework(route.path)

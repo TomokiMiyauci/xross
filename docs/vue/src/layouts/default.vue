@@ -21,11 +21,24 @@
         </h1>
       </router-link>
       <span class="flex items-center space-x-6">
-        <router-link :to="framework === 'vue' ? '/react' : '/vue'">
-          <logos-vue v-if="framework === 'react'" class="w-8 h-8" />
+        <Menu>
+          <Button>Framework</Button>
+          <template #menu>
+            <ul class="shadow border rounded bg-white">
+              <li>
+                <router-link class="flex space-x-3 p-2 px-3" to="/vue">
+                  <logos-vue class="w-8 h-8" /><span>Vue</span>
+                </router-link>
+              </li>
+              <li>
+                <router-link class="flex space-x-2 p-2" to="/react">
+                  <logos-react class="w-8 h-8" /><span>React</span>
+                </router-link>
+              </li>
+            </ul>
+          </template>
+        </Menu>
 
-          <logos-react v-else-if="framework === 'vue'" class="w-8 h-8" />
-        </router-link>
         <a
           class="shadow text-center space-x-6 hover:(bg-gray-50 ring-1 ring-green-400) block rounded p-1 border"
           href="https://github.com/TomokiMiyauci/xross"
@@ -43,6 +56,8 @@
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import Sidebar from '@/components/Sidebar.vue'
+import { Menu, Button } from 'xross-vue'
+
 const route = useRoute()
 
 import { detectFramework } from '@/utils'
