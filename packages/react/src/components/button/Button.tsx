@@ -11,7 +11,7 @@ import {
 import { Color, DEFAULT_COLOR } from '@share/constants'
 import Loading from '@/components/loading/Loading'
 
-type Props = {
+type ButtonProps = {
   color: string | Color
   disabled: boolean
   outlined: boolean
@@ -21,7 +21,7 @@ type Props = {
   children: ReactChild
 }
 
-const Button: FC<Partial<Props>> = ({
+const Button: FC<Partial<ButtonProps>> = ({
   color = DEFAULT_COLOR,
   disabled = false,
   outlined = false,

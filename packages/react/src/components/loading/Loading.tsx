@@ -10,13 +10,13 @@ import {
 } from '@share/components/loading'
 import { divide, multiply, px, subtract } from '@share/utils'
 
-type Props = Partial<{
+type LoadingProps = Partial<{
   stroke: number
   radius: number
   color: string
 }>
 
-const Loading: FC<Props> = ({
+const Loading: FC<LoadingProps> = ({
   stroke = DEFAULT_STROKE,
   radius = DEFAULT_RADIUS,
   color = DEFAULT_COLOR

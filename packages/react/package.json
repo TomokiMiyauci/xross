@@ -22,7 +22,7 @@
     "lint:style": "stylelint src/*",
     "build": "run-p build:*",
     "build:lib": "vite build",
-    "build:types": "tsc && tscpaths -p tsconfig.json -s src",
+    "build:types": "dts-bundle-generator --no-banner --external-imports=react -o dist/index.d.ts src/index.ts",
     "serve": "vite preview"
   },
   "dependencies": {
