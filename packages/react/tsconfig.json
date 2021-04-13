@@ -4,6 +4,7 @@
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "types": ["vite/client"],
+    "skipLibCheck": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
