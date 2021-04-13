@@ -1,3 +1,8 @@
+# [v1.0.0-beta.3](https://github.com/TomokiMiyauci/xross/compare/xross-react@1.0.0-beta.2...xross-react@1.0.0-beta.3) (2021-04-13)
+
+## ✨ New Features
+- [`7600d3f`](https://github.com/TomokiMiyauci/xross/commit/7600d3f)  (vue) Add menu component
+
 # [v1.0.0-beta.3](https://github.com/TomokiMiyauci/xross/compare/xross-vue@1.0.0-beta.2...xross-vue@1.0.0-beta.3) (2021-04-08)
 
 ## ✨ New Features
