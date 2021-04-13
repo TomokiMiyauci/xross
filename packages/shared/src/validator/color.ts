@@ -1,4 +1,6 @@
-import { COLORS, Color } from '../constants'
-const validator = (val: Color): boolean => COLORS.includes(val)
+import { COLORS } from '../constants'
+import { includeValidatorFactory } from '../utils'
+
+const validator = includeValidatorFactory(COLORS)
 
 export { validator }

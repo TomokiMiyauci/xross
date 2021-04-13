@@ -16,8 +16,10 @@
 
 <script lang="ts">
 import { mixin } from '@miyauci/vue-click-outside'
+import { DEFAULT_POSITION } from '@share/components/menu/constants'
 import { Position } from '@share/constants'
 import { position } from '@share/utils'
+import { positionValidator as validator } from '@share/validator'
 import { computed, defineComponent, PropType } from 'vue'
 
 import { useState } from '@/hooks'
@@ -27,7 +29,8 @@ export default defineComponent({
   props: {
     position: {
       type: String as PropType<Position>,
-      default: 'bottom'
+      default: DEFAULT_POSITION,
+      validator
     }
   },
 
