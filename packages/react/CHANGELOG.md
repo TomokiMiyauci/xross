@@ -1,3 +1,8 @@
+# [v1.0.0-beta.5](https://github.com/TomokiMiyauci/xross/compare/xross-vue@1.0.0-beta.4...xross-vue@1.0.0-beta.5) (2021-04-14)
+
+## ✨ New Features
+- [`4d5040d`](https://github.com/TomokiMiyauci/xross/commit/4d5040d)  (react) Add menu component to react
+
 # [v1.0.0-beta.3](https://github.com/TomokiMiyauci/xross/compare/xross-react@1.0.0-beta.2...xross-react@1.0.0-beta.3) (2021-04-13)
 
 ## ✨ New Features

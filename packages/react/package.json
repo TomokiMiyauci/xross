@@ -1,6 +1,6 @@
 {
   "name": "xross-react",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "Component-based UI library for react",
   "main": "dist/xross-react.umd.js",
   "module": "dist/xross-react.es.js",
