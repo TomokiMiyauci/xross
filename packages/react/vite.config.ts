@@ -17,14 +17,22 @@ export default defineConfig({
       }
     ]
   },
-  plugins: [reactRefresh(), WindiCSS()],
+  plugins: [
+    reactRefresh(),
+    WindiCSS({
+      scan: {
+        dirs: ['src', resolve(__dirname, '..', 'shared', 'src')],
+        fileExtensions: ['tsx', 'ts']
+      }
+    })
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src', 'index.ts'),
       name: 'Xross'
     },
     rollupOptions: {
-      external: ['react'],
+      external: ['react', '@tailwindui/react'],
       output: {
         exports: 'named',
         sourcemap: true,
