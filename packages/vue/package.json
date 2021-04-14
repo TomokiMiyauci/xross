@@ -1,6 +1,6 @@
 {
   "name": "xross-vue",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5",
   "description": "Component-based UI library for vue",
   "main": "dist/xross-vue.umd.js",
   "module": "dist/xross-vue.es.js",
